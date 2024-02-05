@@ -1,97 +1,84 @@
-# Testes de API na linguagem GO
-Os testes são fundamentais para garantir a qualidade e confiabilidade do código. Neste projeto, testes unitários foram implementados cobrindo os casos críticos.
+# API de Gerenciamento de Alunos
 
-⚙️ Tecnologias utilizadas
-Framework de testes
+Esta API é um sistema de gerenciamento de alunos desenvolvido em Go, utilizando o framework Gin para roteamento e manipulação de requisições HTTP. O sistema permite realizar operações CRUD (Criar, Ler, Atualizar, Deletar) em um banco de dados de alunos.
 
-Jest - Framework de testes em JavaScript
-Assertions
+## Características
 
-Chai - Biblioteca de assertions
-Testes de integração
+- Criação de novos registros de alunos.
+- Leitura de registros existentes.
+- Atualização de registros de alunos.
+- Exclusão de registros de alunos.
 
-SuperTest - Testes de API REST
-Cobertura de testes
+## Tecnologias
 
-nyc - Gera reports de cobertura
-✅ Testes implementados
-Testes unitários
-src/tests/unit/Calculator.spec.js - Testes unitários da classe Calculator
-src/tests/unit/ShoppingCart.spec.js - Testes unitários da classe ShoppingCart
-Testes de integração
-src/tests/integration/auth.int.spec.js - Fluxo de autenticação
-src/tests/integration/products.int.spec.js - Endpoints de produtos
-Cobertura de testes
-A cobertura de testes é monitorada pelo nyc e relatórios são gerados a cada execução dos testes.
+- Go (versão 1.13 ou superior)
+- Gin Web Framework
+- GORM (ORM para Go)
+- PostgreSQL
 
-O objetivo é manter a cobertura de testes unitários e integração acima de 90%.
+## Configuração do Banco de Dados
 
-🚀 Executando os testes
-# Testes unitários 
-npm run test:unit
+Instruções para criar e configurar o banco de dados necessário para a API:
 
-# Testes de integração
-npm run test:int
+1. Instale e inicie o PostgreSQL.
+2. Crie um novo banco de dados chamado `alunos_db`.
+3. Execute os scripts SQL localizados em `scripts/sql` para criar as tabelas necessárias.
 
-# Todos os testes
-npm test
+## Instalação
 
+### Pré-requisitos
 
+- Go instalado (1.13+)
+- PostgreSQL instalado e em execução
+- Conhecimento básico de Go e bancos de dados SQL
 
-O comando npm test executa tanto os testes unitários quanto os de integração, gerando um relatório de cobertura.
+### Clonando o Repositório
 
-Os testes são executados em pipeline de CI a cada push e pull request.
+```bash
+git clone https://github.com/seu-usuario/api-gerenciamento-alunos.git
+```
+cd api-gerenciamento-alunos
 
-📈 Cobertura de testes
-A cobertura atual dos testes unitários é:
+Instalando Dependências
+```go mod tidy```
 
-O relatório de cobertura detalhado pode ser conferido em coverage/index.html.
+Uso
+Para iniciar a API, execute:
+```go run main.go```
 
-✅ Status do teste de integração contínua
-O status do teste de integração contínua pode ser conferido na aba Actions do repositório.
-🐞 Reportando issues
-Encontrou um bug nos testes? Por favor abra uma issue descrevendo:
+A API estará disponível em http://localhost:8080.
 
-Onde ocorre o bug (em qual arquivo de teste)
-Comportamento esperado
-Comportamento atual
-Exemplo:
+Testes
+Os testes automatizados podem ser executados com o seguinte comando:
+```go test ./... -v```
 
-Arquivo: src/tests/unit/Calculator.spec.js
+Testes Unitários
+Descrição dos testes unitários e como eles são organizados no projeto.
 
-Comportamento esperado:
-- Chamada de somar(1, 2) deve retornar 3
+Testes de Integração
+Descrição dos testes de integração e como eles interagem com o banco de dados.
 
-Comportamento atual:
-- Chamada está retornando 5
+Integração Contínua (CI)
+Descrição da rotina de CI configurada para o projeto, incluindo:
 
+Plataforma de CI utilizada (GitHub Actions, Travis CI, etc.).
+Etapas do pipeline de CI (build, test, deploy).
+Como os resultados são reportados e visualizados.
+Contribuindo
+Para contribuir com o projeto, siga estas etapas:
 
+Fork o repositório.
+Crie um novo branch (git checkout -b feature/nova-funcionalidade).
+Faça suas alterações.
+Commit suas mudanças (git commit -am 'Adiciona nova funcionalidade').
+Push para o branch (git push origin feature/nova-funcionalidade).
+Crie um Pull Request.
+Consulte CONTRIBUTING.md para diretrizes de contribuição detalhadas.
 
-✨ Contribuindo
-Contribuições são bem-vindas! Por favor siga estas etapas:
+Licença
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
 
-Faça um fork deste repositório
-Crie uma branch com sua feature (git checkout -b feature/MinhaFeature)
-Faça commit das suas alterações (git commit -m 'Adicionando MinhaFeature')
-Faça push para a branch (git push origin feature/MinhaFeature)
-Abra um Pull Request
-📝 Licença
-Este projeto está sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
-
-🧪 TDD
-Este projeto segue a abordagem de TDD (Test Driven Development). Os testes são desenvolvidos antes da implementação.
-
-Isso garante que:
-
-A cobertura de testes seja alta desde o início
-O design da aplicação seja orientado a testabilidade (SOLID)
-Regressões sejam evitadas
-⚡️ Próximos passos
-Funcionalidades previstas:
-
-Aumentar a cobertura de testes unitários para 95%
-Adicionar testes E2E com Cypress
-Configurar teste de mutação com Stryker
-Adicionar teste de performance com k6
-Implementar teste A/B
-Sinta-se à vontade para contribuir com alguma dessas funcionalidades!
+Autores
+Nome do Autor - seu-usuario
+Contato
+Para dúvidas ou sugestões, abra uma issue ou entre em contato através de email@example.com.

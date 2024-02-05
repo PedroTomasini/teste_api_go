@@ -34,8 +34,7 @@ Instruções para criar e configurar o banco de dados necessário para a API:
 
 ### Clonando o Repositório
 
-```bash
-git clone https://github.com/seu-usuario/teste_api_go.git```
+```git clone https://github.com/seu-usuario/teste_api_go.git```
 
 Instalando Dependências
 ```go mod tidy```

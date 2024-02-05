@@ -1,24 +1,24 @@
 # API de Gerenciamento de Alunos
 
-Esta API é um sistema de gerenciamento de alunos desenvolvido em Go, utilizando o framework Gin para roteamento e manipulação de requisições HTTP. O sistema permite realizar operações CRUD (Criar, Ler, Atualizar, Deletar) em um banco de dados de alunos.
+Este documento apresenta uma visão geral da API de Gerenciamento de Alunos, um sistema desenvolvido em Go que utiliza o framework Gin para roteamento e manipulação de requisições HTTP. A API possibilita a execução de operações CRUD (Criar, Ler, Atualizar, Deletar) em um banco de dados de alunos.
 
 ## Características
 
-- Criação de novos registros de alunos.
-- Leitura de registros existentes.
-- Atualização de registros de alunos.
-- Exclusão de registros de alunos.
+- **Criação de Registros:** Permite a adição de novos registros de alunos.
+- **Leitura de Registros:** Possibilita a consulta de registros existentes.
+- **Atualização de Registros:** Permite a modificação de informações de alunos.
+- **Exclusão de Registros:** Facilita a remoção de registros de alunos.
 
-## Tecnologias
+## Tecnologias Utilizadas
 
-- Go (versão 1.13 ou superior)
-- Gin Web Framework
-- GORM (ORM para Go)
-- PostgreSQL
+- **Go (versão 1.13 ou superior)**
+- **Gin Web Framework**
+- **GORM (ORM para Go)**
+- **PostgreSQL**
 
 ## Configuração do Banco de Dados
 
-Instruções para criar e configurar o banco de dados necessário para a API:
+Para utilizar a API, siga as seguintes instruções para criar e configurar o banco de dados:
 
 1. Instale e inicie o PostgreSQL.
 2. Crie um novo banco de dados chamado `alunos_db`.
@@ -34,49 +34,72 @@ Instruções para criar e configurar o banco de dados necessário para a API:
 
 ### Clonando o Repositório
 
-```git clone https://github.com/seu-usuario/teste_api_go.git```
+```bash
+git clone https://github.com/seu-usuario/teste_api_go.git
+```
 
-Instalando Dependências
+## Documentação de Testes e CI
 
-```go mod tidy```
+### Testes Automatizados
 
-Para iniciar a API, execute:
+Os testes automatizados desempenham um papel crucial na garantia da qualidade do código e na identificação de problemas antes da implantação. O arquivo `main_test.go` contém os testes, que são estruturados para validar diferentes aspectos da API.
 
-```go run main.go```
+#### Estrutura dos Testes
 
-A API estará disponível em http://localhost:8080.
+- `TestVerificaStatusCodeDaSaudacaoComParametro`: Verifica o status `200 OK` e a mensagem correta na rota de saudação.
+- `TestListaTodosOsAlunosHanlder`: Testa a rota de listagem de alunos, garantindo que retorne o status `200 OK`.
+- `TestBucaAlunoPorCPFHandler`: Confirma o funcionamento correto da busca de aluno por CPF.
+- `TestBuscaAlunoPorIDHandler`: Verifica se a busca de aluno por ID retorna o aluno correto e o status `200 OK`.
+- `TestDeletaAlunoHandler`: Testa a rota de deleção de aluno, assegurando seu funcionamento adequado.
+- `TestEditaUmAlunoHandler`: Verifica se a edição de um aluno é realizada corretamente.
 
-Testes
-Os testes automatizados podem ser executados com o seguinte comando:
+#### Execução dos Testes
 
-```go test ./... -v```
+```bash
+go test -v ./...
+```
 
-Testes Unitários
-Descrição dos testes unitários e como eles são organizados no projeto.
+### Integração Contínua (CI)
 
-Testes de Integração
-Descrição dos testes de integração e como eles interagem com o banco de dados.
+O fluxo de trabalho de CI está definido no arquivo `.github/workflows/go.yml` e automatiza a execução de testes e verificações sempre que há um novo código enviado ao repositório.
 
-Integração Contínua (CI)
-Descrição da rotina de CI configurada para o projeto, incluindo:
+#### Etapas do Fluxo de Trabalho de CI
 
-Plataforma de CI utilizada (GitHub Actions, Travis CI, etc.).
-Etapas do pipeline de CI (build, test, deploy).
-Como os resultados são reportados e visualizados.
-Contribuindo
-Para contribuir com o projeto, siga estas etapas:
+1. Configuração do ambiente de execução.
+2. Instalação das dependências.
+3. Execução dos testes automatizados.
+4. (Opcional) Outras verificações, como linting ou análise de código.
 
-Fork o repositório.
-Crie um novo branch (git checkout -b feature/nova-funcionalidade).
-Faça suas alterações.
-Commit suas mudanças (git commit -am 'Adiciona nova funcionalidade').
-Push para o branch (git push origin feature/nova-funcionalidade).
-Crie um Pull Request.
+#### Gatilhos de Execução
+
+O CI é configurado para ser executado nos seguintes eventos:
+
+- Push para a branch principal (geralmente main ou master).
+- Pull requests para a branch principal.
+
+#### Resultados
+
+Os resultados da execução do CI são exibidos no GitHub, na seção "Actions" do repositório. Em caso de falhas, é recomendável corrigir os problemas identificados antes de prosseguir com a fusão de código.
+
+Para contribuições e melhorias nos testes ou na rotina de CI, consulte o arquivo CONTRIBUTING.md.
+
+## Contribuindo
+
+Para contribuir com o projeto:
+
+1. Fork o repositório.
+2. Crie um novo branch (git checkout -b feature/nova-funcionalidade).
+3. Faça suas alterações.
+4. Commit suas mudanças (git commit -am 'Adiciona nova funcionalidade').
+5. Push para o branch (git push origin feature/nova-funcionalidade).
+6. Crie um Pull Request.
+
 Consulte CONTRIBUTING.md para diretrizes de contribuição detalhadas.
 
-Licença
+## Licença
+
 Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
 
-Autores
-Nome do Autor - PedroTomasini
+## Autores
 
+Nome do Autor - PedroTomasini

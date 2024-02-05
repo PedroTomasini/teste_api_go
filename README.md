@@ -35,9 +35,7 @@ Instruções para criar e configurar o banco de dados necessário para a API:
 ### Clonando o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/api-gerenciamento-alunos.git
-```
-cd api-gerenciamento-alunos
+git clone https://github.com/seu-usuario/teste_api_go.git```
 
 Instalando Dependências
 ```go mod tidy```
@@ -79,6 +77,5 @@ Licença
 Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
 
 Autores
-Nome do Autor - seu-usuario
-Contato
-Para dúvidas ou sugestões, abra uma issue ou entre em contato através de email@example.com.
+Nome do Autor - PedroTomasini
+

@@ -37,16 +37,18 @@ Instruções para criar e configurar o banco de dados necessário para a API:
 ```git clone https://github.com/seu-usuario/teste_api_go.git```
 
 Instalando Dependências
+
 ```go mod tidy```
 
-Uso
 Para iniciar a API, execute:
+
 ```go run main.go```
 
 A API estará disponível em http://localhost:8080.
 
 Testes
 Os testes automatizados podem ser executados com o seguinte comando:
+
 ```go test ./... -v```
 
 Testes Unitários
